@@ -11,6 +11,7 @@ function makeSongList(songList) {
   </div>`);
   $(".uiContainer--wrapper").html($songsDisplay);
   for (let song in songList ) {
+    console.log("song in songlist", song, "songList", songList);
     let currentSong = songList[song],
         songListItem = $("<li>", {class: "song-list__item"}),
         title = $("<span/>", {class: "song-title"}).text(currentSong.title),
@@ -18,6 +19,7 @@ function makeSongList(songList) {
         songListEdit = $("<a>", {"data-edit-id": song, class: "edit-btn waves-effect waves-light btn", text: "edit" }),
         songListDelete = $("<a>", {"data-delete-id": song, class: "delete-btn waves-effect waves-light btn", text: "delete" });
         // Same as `<a id="${song}" class="delete-btn waves-effect waves-light btn">delete</a>`
+        console.log("currentSong", currentSong);
 
     songListData.append(
       `<li>${currentSong.artist}</li>
